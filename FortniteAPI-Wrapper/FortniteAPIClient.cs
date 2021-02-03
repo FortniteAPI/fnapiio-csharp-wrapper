@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using FortniteAPI.Endpoints.v1;
+using FortniteAPI.Endpoints.V2;
 using FortniteAPI.Util;
 using RestSharp;
 
@@ -9,6 +10,7 @@ namespace FortniteAPI
     public class FortniteAPIClient
     {
         public V1Endpoints V1Endpoints { get; }
+        public V2Endpoints V2Endpoints { get; }
 
         public FortniteAPIClient(string api)
         {
@@ -23,6 +25,7 @@ namespace FortniteAPI
                 }.UseSerializer<JsonNetSerializer>();
 
                 V1Endpoints = new V1Endpoints(rest);
+                V2Endpoints = new V2Endpoints(rest);
             }
             else
             {

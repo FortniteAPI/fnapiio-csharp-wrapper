@@ -1,12 +1,12 @@
 ﻿using FortniteAPI.Models.Utility;
 using Newtonsoft.Json;
 
-namespace FortniteAPI.Models.v1
+namespace FortniteAPI.Models.v2
 {
-    public class V1UpcomingItems
+    public class V2UpcomingItems
     {
         [JsonProperty("result")] public bool Result;
         [JsonProperty("lastUpdate")] public LastUpdate LastUpdate;
-        [JsonProperty("items")] public V1Item[] Items;
+        [JsonProperty("items")] public V2Item[] Items;
     }
 }

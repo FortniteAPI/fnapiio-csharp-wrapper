@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace FortniteAPI.Models.v1
+namespace FortniteAPI.Models.Utility
 {
-    public class V1Images
+    public class Images
     {
         [JsonProperty("icon")] public string Icon;
         [JsonProperty("full_size")] public string FullSize;
