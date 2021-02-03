@@ -4,11 +4,11 @@ namespace FortniteAPI.Endpoints.V2
 {
     public class V2Endpoints
     {
-        public V2ItemEndpoints Items { get; }
+        public V2CosmeticEndpoints Cosmetics { get; }
 
         internal V2Endpoints(IRestClient client)
         {
-            Items = new V2ItemEndpoints(client);
+            Cosmetics = new V2CosmeticEndpoints(client);
         }
     }
 }
