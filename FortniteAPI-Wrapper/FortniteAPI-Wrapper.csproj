@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net48;netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
+    <RootNamespace>FortniteAPI</RootNamespace>
+    <PackageId>FortniteAPI-Wrapper</PackageId>
+    <Product>FortniteAPI-Wrapper</Product>
+    <PackageProjectUrl>https://fortniteapi.io</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FortniteAPI/fnapiio-csharp-wrapper</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>fortniteapi.io, fortnite, fn, fortniteapi, fortnite api</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>FortniteAPI.io Development Team</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.0</Version>
+    <Company>FortniteAPI.io</Company>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright (c) 2021-Present FortniteAPI.io</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1-build000550" />
+    <PackageReference Include="RestSharp" Version="106.11.8-alpha.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
