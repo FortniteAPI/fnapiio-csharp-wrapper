@@ -18,7 +18,7 @@
     <Copyright>Copyright (c) 2021-Present FortniteAPI.io</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <PackageIcon>logo.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
   </PropertyGroup>
 
@@ -39,11 +39,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\logo.png">
+    <None Include="Extra\icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="..\..\LICENSE">
+    <None Include="Extra\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
