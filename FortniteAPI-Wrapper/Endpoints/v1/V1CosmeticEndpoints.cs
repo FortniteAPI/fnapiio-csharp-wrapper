@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using FortniteAPI.Models.v1;
+using FortniteAPI.Util;
 using RestSharp;
 
 namespace FortniteAPI.Endpoints.v1
@@ -31,22 +32,16 @@ namespace FortniteAPI.Endpoints.v1
             return GetUpcomingCosmeticsAsync(lang).GetAwaiter().GetResult();
         }
         
-        public async Task<V1CosmeticList> GetCosmeticListAsync(string lang, CancellationToken cancellationToken = default)
+        public async Task<V1CosmeticList> GetCosmeticListAsync(Action<V1CosmeticListParams> param, CancellationToken cancellationToken = default)
         {
-            var request = new RestRequest("v1/items/list", Method.GET);
-
-            if (!string.IsNullOrWhiteSpace(lang))
-            {
-                request.AddQueryParameter("lang", lang);
-            }
-
+            var request = new RestRequest("v1/items/list", Method.GET).ApplyParams(param);
             var res = await Client.ExecuteAsync<V1CosmeticList>(request, cancellationToken).ConfigureAwait(false);
             return res.Data;
         }
         
-        public V1CosmeticList GetCosmeticList(string lang)
+        public V1CosmeticList GetCosmeticList(Action<V1CosmeticListParams> param)
         {
-            return GetCosmeticListAsync(lang).GetAwaiter().GetResult();
+            return GetCosmeticListAsync(param).GetAwaiter().GetResult();
         }
     }
 }
