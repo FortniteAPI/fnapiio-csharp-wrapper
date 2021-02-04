@@ -24,7 +24,8 @@ namespace FortniteAPI.Models.v2
         public Optional<double> Interest { get; set; }
         public Optional<Images> Images { get; set; }
         public Optional<string> Video { get; set; }
-        //public Optional<string[]> GameplayTags { get; set; }
+        public Optional<string[]> GameplayTags { get; set; }
+        public Optional<GameplayTagSearchType> GameplayTagSearchType { get; set; }
         public Optional<V2BPInfo> BattlePass { get; set; }
         public Optional<V2TranslatableInfo> Set { get; set; }
     }

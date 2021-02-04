@@ -198,9 +198,60 @@ namespace FortniteAPI.Util
             {
                 request.AddParameter("video", p.Video.Value);
             }
-            
-            // p.GameplayTags
 
+            if (p.GameplayTags.HasValue && p.GameplayTagSearchType.HasValue)
+            {
+                switch (p.GameplayTagSearchType.Value)
+                {
+                    case GameplayTagSearchType.OR:
+                        request.AddParameter("gameplayTags", string.Join("|", p.GameplayTags.Value));
+                        break;
+                    case GameplayTagSearchType.AND:
+                        request.AddParameter("gameplayTags", string.Join(",", p.GameplayTags.Value));
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            if (p.BattlePass.HasValue)
+            {
+                if (!string.IsNullOrWhiteSpace($"{p.BattlePass.Value.Season}"))
+                {
+                    request.AddParameter("battlepass.season", p.BattlePass.Value.Season);
+                }
+
+                if (!string.IsNullOrWhiteSpace($"{p.BattlePass.Value.Tier}"))
+                {
+                    request.AddParameter("battlepass.tier", p.BattlePass.Value.Tier);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BattlePass.Value.Type))
+                {
+                    request.AddParameter("battlepass.type", p.BattlePass.Value.Type);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BattlePass.Value.DisplayText.Chapter))
+                {
+                    request.AddParameter("battlepass.displayText.chapter", p.BattlePass.Value.DisplayText.Chapter);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BattlePass.Value.DisplayText.Season))
+                {
+                    request.AddParameter("battlepass.displayText.season", p.BattlePass.Value.DisplayText.Season);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BattlePass.Value.DisplayText.ChapterSeason))
+                {
+                    request.AddParameter("battlepass.displayText.chapterSeason", p.BattlePass.Value.DisplayText.ChapterSeason);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BattlePass.Value.BattlePassName))
+                {
+                    request.AddParameter("battlepass.battlePassName", p.BattlePass.Value.BattlePassName);
+                }
+            }
+            
             if (p.Set.HasValue)
             {
                 if (!string.IsNullOrWhiteSpace(p.Set.Value.Id))
