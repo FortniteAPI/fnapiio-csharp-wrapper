@@ -7,6 +7,6 @@ namespace FortniteAPI.Models.v2
     {
         [JsonProperty("result")] public bool Result;
         [JsonProperty("lastUpdate")] public LastUpdate LastUpdate;
-        [JsonProperty("items")] public V2Item[] Items;
+        [JsonProperty("items")] public V2Cosmetic[] Items;
     }
 }

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace FortniteAPI.Models.v2
 {
-    public class V2Item
+    public class V2Cosmetic
     {
         [JsonProperty("id")] public string Id;
         [JsonProperty("type")] public V2TranslatableInfo Type;
@@ -14,7 +14,7 @@ namespace FortniteAPI.Models.v2
         [JsonProperty("series")] public V2TranslatableInfo Series;
         [JsonProperty("price")] public int Price;
         [JsonProperty("added")] public V2Added Added;
-        [JsonProperty("builtInEmote")] public V2Item BuiltInEmote;
+        [JsonProperty("builtInEmote")] public V2Cosmetic BuiltInEmote;
         [JsonProperty("copyrightedAudio")] public bool CopyrightedAudio;
         [JsonProperty("upcoming")] public bool Upcoming;
         [JsonProperty("reactive")] public bool Reactive;
