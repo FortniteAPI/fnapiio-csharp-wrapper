@@ -29,7 +29,7 @@ namespace FortniteAPI.Models.v2
         [JsonProperty("id")] public string Id;
         [JsonProperty("name")] public string Name;
         [JsonProperty("enabled")] public bool Enabled;
-        //[JsonProperty("parentQuest")]
+        [JsonProperty("parentQuest")] public string ParentQuest;
         [JsonProperty("progressTotal")] public int ProgressTotal;
         [JsonProperty("tags")] public string[] Tags;
         [JsonProperty("reward")] public V2QuestReward Reward;
