@@ -12,14 +12,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>FortniteAPI.io Development Team</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.0</Version>
+    <Version>1.0.0-dev5-hotfix1</Version>
     <Company>FortniteAPI.io</Company>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright (c) 2021-Present FortniteAPI.io</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix authorization header</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

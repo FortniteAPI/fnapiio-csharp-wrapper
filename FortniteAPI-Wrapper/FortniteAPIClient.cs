@@ -12,9 +12,9 @@ namespace FortniteAPI
         public V1Endpoints V1Endpoints { get; }
         public V2Endpoints V2Endpoints { get; }
 
-        public FortniteAPIClient(string api)
+        public FortniteAPIClient(string apiKey)
         {
-            if (!string.IsNullOrWhiteSpace(api))
+            if (!string.IsNullOrWhiteSpace(apiKey))
             {
                 var ver = Assembly.GetExecutingAssembly().GetName().Version;
 
@@ -22,14 +22,15 @@ namespace FortniteAPI
                 {
                     UserAgent = $"FortniteAPIIO/{ver?.ToString(3)}",
                     Timeout = 10 * 1000
-                }.UseSerializer<JsonNetSerializer>();
+                }.UseSerializer<JsonNetSerializer>()
+                .AddDefaultHeader("Authorization", apiKey);
 
                 V1Endpoints = new V1Endpoints(rest);
                 V2Endpoints = new V2Endpoints(rest);
             }
             else
             {
-                throw new Exception("API is required, please supply an API key in the constructor");
+                throw new Exception($"{nameof(apiKey)} is required, please supply an API key in the constructor");
             }
         }
     }
