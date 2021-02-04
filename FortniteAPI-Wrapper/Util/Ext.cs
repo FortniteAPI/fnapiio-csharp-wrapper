@@ -93,7 +93,53 @@ namespace FortniteAPI.Util
                 }
             }
 
-            // p.BuiltInEmote
+            if (p.BuiltInEmote.HasValue)
+            {
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Id))
+                {
+                    request.AddParameter("builtInEmote.id", p.BuiltInEmote.Value.Id);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Name))
+                {
+                    request.AddParameter("builtInEmote.name", p.BuiltInEmote.Value.Name);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Rarity.Id))
+                {
+                    request.AddParameter("builtInEmote.rarity.id", p.BuiltInEmote.Value.Rarity.Id);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Rarity.Name))
+                {
+                    request.AddParameter("builtInEmote.rarity.name", p.BuiltInEmote.Value.Rarity.Name);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Images.Icon))
+                {
+                    request.AddParameter("builtInEmote.images.icon", p.BuiltInEmote.Value.Images.Icon);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Images.Featured))
+                {
+                    request.AddParameter("builtInEmote.images.featured", p.BuiltInEmote.Value.Images.Featured);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Images.Background))
+                {
+                    request.AddParameter("builtInEmote.images.background", p.BuiltInEmote.Value.Images.Background);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Images.FullBackground))
+                {
+                    request.AddParameter("builtInEmote.images.full_background", p.BuiltInEmote.Value.Images.FullBackground);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.BuiltInEmote.Value.Video))
+                {
+                    request.AddParameter("builtInEmote.video", p.BuiltInEmote.Value.Video);
+                }
+            }
 
             if (p.CopyrightedAudio.HasValue)
             {
@@ -151,6 +197,26 @@ namespace FortniteAPI.Util
             if (p.Video.HasValue)
             {
                 request.AddParameter("video", p.Video.Value);
+            }
+            
+            // p.GameplayTags
+
+            if (p.Set.HasValue)
+            {
+                if (!string.IsNullOrWhiteSpace(p.Set.Value.Id))
+                {
+                    request.AddParameter("set.id", p.Set.Value.Id);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.Set.Value.Name))
+                {
+                    request.AddParameter("set.name", p.Set.Value.Name);
+                }
+
+                if (!string.IsNullOrWhiteSpace(p.Set.Value.PartOfSet))
+                {
+                    request.AddParameter("set.partOf", p.Set.Value.PartOfSet);
+                }
             }
 
             return request;
