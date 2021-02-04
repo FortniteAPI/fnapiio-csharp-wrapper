@@ -11,7 +11,7 @@ namespace FortniteAPI.Endpoints.V2
         {
         }
 
-        public async Task<V2Shop> GetRadiosAsync(string lang, CancellationToken cancellationToken = default)
+        public async Task<V2Shop> GetShopAsync(string lang, CancellationToken cancellationToken = default)
         {
             var request = new RestRequest("v2/shop", Method.GET);
 
@@ -24,9 +24,9 @@ namespace FortniteAPI.Endpoints.V2
             return res.Data;
         }
 
-        public V2Shop GetRadios(string lang)
+        public V2Shop GetShop(string lang)
         {
-            return GetRadiosAsync(lang).GetAwaiter().GetResult();
+            return GetShopAsync(lang).GetAwaiter().GetResult();
         }
     }
 }
