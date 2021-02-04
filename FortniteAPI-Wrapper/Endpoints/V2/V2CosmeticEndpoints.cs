@@ -1,6 +1,8 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using FortniteAPI.Models.v2;
+using FortniteAPI.Util;
 using RestSharp;
 
 namespace FortniteAPI.Endpoints.V2
@@ -27,6 +29,18 @@ namespace FortniteAPI.Endpoints.V2
         public V2UpcomingCosmetics GetUpcomingCosmetics(string lang)
         {
             return GetUpcomingCosmeticsAsync(lang).GetAwaiter().GetResult();
+        }
+        
+        public async Task<V2CosmeticList> GetCosmeticListAsync(Action<V2CosmeticListParams> param, CancellationToken cancellationToken = default)
+        {
+            var request = new RestRequest("v2/items/list", Method.GET).ApplyParams(param);
+            var res = await Client.ExecuteAsync<V2CosmeticList>(request, cancellationToken).ConfigureAwait(false);
+            return res.Data;
+        }
+        
+        public V2CosmeticList GetCosmeticList(Action<V2CosmeticListParams> param)
+        {
+            return GetCosmeticListAsync(param).GetAwaiter().GetResult();
         }
     }
 }

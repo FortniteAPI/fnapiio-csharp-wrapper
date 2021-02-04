@@ -8,6 +8,7 @@ namespace FortniteAPI.Models.v2
         [JsonProperty("tier")] public int Tier;
         [JsonProperty("type")] public string Type;
         [JsonProperty("displayText")] public V2BPText DisplayText;
+        [JsonProperty("battlePassName")] public string BattlePassName;
     }
 
     public class V2BPText
