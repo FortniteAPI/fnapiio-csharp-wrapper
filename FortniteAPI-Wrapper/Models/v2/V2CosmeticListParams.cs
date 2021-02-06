@@ -8,11 +8,11 @@ namespace FortniteAPI.Models.v2
         public Optional<string> Lang { get; set; }
         public Optional<string> SearchLang { get; set; }
         public Optional<string> Id { get; set; }
-        public Optional<V2TranslatableInfo> Type { get; set; }
+        public Optional<TranslatableInfo> Type { get; set; }
         public Optional<string> Name { get; set; }
         public Optional<string> Description { get; set; }
-        public Optional<V2TranslatableInfo> Rarity { get; set; }
-        public Optional<V2TranslatableInfo> Series { get; set; }
+        public Optional<TranslatableInfo> Rarity { get; set; }
+        public Optional<TranslatableInfo> Series { get; set; }
         public Optional<int> Price { get; set; }
         public Optional<V2Added> Added { get; set; }
         public Optional<V2Cosmetic> BuiltInEmote { get; set; }
@@ -27,6 +27,6 @@ namespace FortniteAPI.Models.v2
         public Optional<string[]> GameplayTags { get; set; }
         public Optional<GameplayTagSearchType> GameplayTagSearchType { get; set; }
         public Optional<V2BPInfo> BattlePass { get; set; }
-        public Optional<V2TranslatableInfo> Set { get; set; }
+        public Optional<TranslatableInfo> Set { get; set; }
     }
 }

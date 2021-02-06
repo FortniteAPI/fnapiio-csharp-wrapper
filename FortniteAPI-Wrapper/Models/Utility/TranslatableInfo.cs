@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace FortniteAPI.Models.v2
+namespace FortniteAPI.Models.Utility
 {
-    public class V2TranslatableInfo
+    public class TranslatableInfo
     {
         [JsonProperty("id")] public string Id;
         [JsonProperty("name")] public string Name;

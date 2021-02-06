@@ -7,11 +7,11 @@ namespace FortniteAPI.Models.v2
     public class V2Cosmetic
     {
         [JsonProperty("id")] public string Id;
-        [JsonProperty("type")] public V2TranslatableInfo Type;
+        [JsonProperty("type")] public TranslatableInfo Type;
         [JsonProperty("name")] public string Name;
         [JsonProperty("description")] public string Description;
-        [JsonProperty("rarity")] public V2TranslatableInfo Rarity;
-        [JsonProperty("series")] public V2TranslatableInfo Series;
+        [JsonProperty("rarity")] public TranslatableInfo Rarity;
+        [JsonProperty("series")] public TranslatableInfo Series;
         [JsonProperty("price")] public int Price;
         [JsonProperty("added")] public V2Added Added;
         [JsonProperty("builtInEmote")] public V2Cosmetic BuiltInEmote;
@@ -25,6 +25,6 @@ namespace FortniteAPI.Models.v2
         [JsonProperty("video")] public string Video;
         [JsonProperty("gameplayTags")] public string[] GameplayTags;
         [JsonProperty("battlepass")] public V2BPInfo Battlepass;
-        [JsonProperty("set")] public V2TranslatableInfo Set;
+        [JsonProperty("set")] public TranslatableInfo Set;
     }
 }

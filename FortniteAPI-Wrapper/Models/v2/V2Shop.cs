@@ -29,12 +29,12 @@ namespace FortniteAPI.Models.v2
         [JsonProperty("giftAllowed")] public bool GiftAllowed;
         [JsonProperty("buyAllowed")] public bool BuyAllowed;
         [JsonProperty("price")] public V2ShopPrice Price;
-        [JsonProperty("rarity")] public V2TranslatableInfo Rarity;
-        [JsonProperty("series")] public V2TranslatableInfo Series;
-        [JsonProperty("banner")] public V2TranslatableInfo Banner;
+        [JsonProperty("rarity")] public TranslatableInfo Rarity;
+        [JsonProperty("series")] public TranslatableInfo Series;
+        [JsonProperty("banner")] public TranslatableInfo Banner;
         [JsonProperty("granted")] public V2Cosmetic[] Granted;
         [JsonProperty("priority")] public int Priority;
-        [JsonProperty("section")] public V2TranslatableInfo Section;
+        [JsonProperty("section")] public TranslatableInfo Section;
         [JsonProperty("groupIndex")] public int GroupIndex;
         [JsonProperty("storeName")] public string StoreName;
         [JsonProperty("tileSize")] public string TileSize;
