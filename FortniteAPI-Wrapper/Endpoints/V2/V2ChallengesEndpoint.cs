@@ -11,7 +11,7 @@ namespace FortniteAPI.Endpoints.V2
         {
         }
 
-        public async Task<V2Challenges> GetChallengesAsync(string lang, int season, CancellationToken cancellationToken = default)
+        public async Task<V2Challenges> GetChallengesAsync(string lang, string season, CancellationToken cancellationToken = default)
         {
             var request = new RestRequest("v2/shop", Method.GET);
 
@@ -20,16 +20,16 @@ namespace FortniteAPI.Endpoints.V2
                 request.AddQueryParameter("lang", lang);
             }
 
-            if (!string.IsNullOrWhiteSpace(season.ToString()))
+            if (!string.IsNullOrWhiteSpace(season))
             {
-                request.AddQueryParameter("season", season.ToString());
+                request.AddQueryParameter("season", season);
             }
 
             var res = await Client.ExecuteAsync<V2Challenges>(request, cancellationToken).ConfigureAwait(false);
             return res.Data;
         }
 
-        public V2Challenges GetChallenges(string lang, int season)
+        public V2Challenges GetChallenges(string lang, string season)
         {
             return GetChallengesAsync(lang, season).GetAwaiter().GetResult();
         }
